@@ -39,7 +39,7 @@ export default function Page() {
 					</div>
 					<Button
 						variant="outline"
-						className="border-gray-700 text-black hover:bg-gray-800 hover:text-white">
+						className="border-gray-700 bg-white text-gray-800 hover:bg-blue-500 hover:text-white">
 						Resume
 					</Button>
 				</div>
