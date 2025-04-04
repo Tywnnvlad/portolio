@@ -17,7 +17,7 @@ export default function ContactForm() {
 			const response = await submitContactForm(formData);
 			setMessage(response.message);
 		} catch (error) {
-			setMessage("Something went wrong. Please try again.");
+			setMessage("Something went wrong. Please try again." + error);
 		} finally {
 			setPending(false);
 		}
