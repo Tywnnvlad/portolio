@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/react";
 
 export default function SpaceBackground() {
 	// Animation keyframes for particles
