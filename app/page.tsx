@@ -5,12 +5,10 @@ import ContactForm from "./components/contact-form";
 import ProjectCard from "./components/project-card";
 import SpaceBackground from "./components/space-background";
 import TechStack from "./components/tech-stack";
-import { Analytics } from "@vercel/analytics/react";
 
 export default function Page() {
 	return (
 		<div className="min-h-screen flex flex-col">
-			<Analytics />
 			<SpaceBackground />
 
 			<header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/70 backdrop-blur-md supports-[backdrop-filter]:bg-black/40">
