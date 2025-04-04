@@ -38,7 +38,7 @@ export default function Page() {
 						</nav>
 					</div>
 					<Button
-						variant="outline"
+						// variant="outline"
 						className="border-gray-700 bg-white text-gray-800 hover:bg-blue-500 hover:text-white">
 						Resume
 					</Button>
@@ -53,16 +53,23 @@ export default function Page() {
 						<div className="flex flex-col items-center justify-center space-y-6 text-center">
 							<div className="space-y-3 max-w-3xl">
 								<h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-									Full Stack Developer
+									gcal.dev
 								</h1>
+
 								<p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-									Building digital experiences with modern
-									technologies. Focused on creating elegant
-									solutions to complex problems.
+									Welcome to my corner of the internet! I am,
+									a software developer who enjoys the
+									challenge of building innovative software.
+									When I am not coding, you will find me at
+									the climbing gym or playing boardgames with
+									friends! Feel free to browse my work and get
+									in touch.
 								</p>
 							</div>
 							<div className="flex space-x-4">
-								<Link href="https://github.com" target="_blank">
+								<Link
+									href="https://github.com/Tywnnvlad"
+									target="_blank">
 									<Button
 										variant="outline"
 										size="icon"
@@ -72,7 +79,7 @@ export default function Page() {
 									</Button>
 								</Link>
 								<Link
-									href="https://linkedin.com"
+									href="https://www.linkedin.com/in/gregorycal1994/"
 									target="_blank">
 									<Button
 										variant="outline"
@@ -84,7 +91,7 @@ export default function Page() {
 										</span>
 									</Button>
 								</Link>
-								<Link
+								{/* <Link
 									href="https://twitter.com"
 									target="_blank">
 									<Button
@@ -94,8 +101,8 @@ export default function Page() {
 										<Twitter className="h-4 w-4" />
 										<span className="sr-only">Twitter</span>
 									</Button>
-								</Link>
-								<Link href="mailto:hello@example.com">
+								</Link> */}
+								<Link href="mailto:hello@gred_cal@yahoo.com">
 									<Button
 										variant="outline"
 										size="icon"
@@ -116,25 +123,45 @@ export default function Page() {
 						</h2>
 						<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 							<ProjectCard
-								title="E-commerce Platform"
-								description="A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration."
+								title="Chess"
+								description="A java-based chess game, using a Swing GUI. The game is made for players of various chess-ability, having features including: move highlights, move hints, move undo/redo, a piece information query button, AI player functionality, PGN loading and saving functionality, and more."
 								image="/placeholder.svg?height=400&width=600"
-								link="https://github.com"
-								tags={["Next.js", "Prisma", "Stripe"]}
+								link="https://github.com/Tywnnvlad/chess"
+								tags={[
+									"Java",
+									"Swing",
+									"JUnit",
+									"ANTlr",
+									"Regex",
+								]}
 							/>
 							<ProjectCard
-								title="Task Management App"
-								description="A real-time task management application with team collaboration features."
+								title="Raytracing engine"
+								description="This project is a basic raytracing engine implemented in Java. It demonstrates fundamental raytracing concepts."
 								image="/placeholder.svg?height=400&width=600"
-								link="https://github.com"
-								tags={["React", "Node.js", "Socket.io"]}
+								link="https://github.com/Tywnnvlad/Raytracing-engine"
+								tags={["Java"]}
 							/>
 							<ProjectCard
-								title="AI Chat Interface"
-								description="An AI-powered chat interface with natural language processing capabilities."
+								title="File integrity checker"
+								description="A Python script to monitor file integrity within a directory by comparing SHA256 hashes against a stored baseline."
 								image="/placeholder.svg?height=400&width=600"
-								link="https://github.com"
-								tags={["OpenAI", "Next.js", "TailwindCSS"]}
+								link="https://github.com/Tywnnvlad/File-Inegrity-Cheker"
+								tags={["Python"]}
+							/>
+							<ProjectCard
+								title="Fullstack Websites"
+								description="Various websites that different technologies for the needs of clients "
+								image="/placeholder.svg?height=400&width=600"
+								link="https://github.com/Tywnnvlad/"
+								tags={[
+									"React",
+									"Next.js",
+									"Tailwind",
+									"Django",
+									"MongoDB",
+									"Prisma",
+								]}
 							/>
 						</div>
 					</div>

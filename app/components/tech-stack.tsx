@@ -8,8 +8,10 @@ const technologies = [
 			"Next.js",
 			"TypeScript",
 			"TailwindCSS",
-			"Redux",
-			"GraphQL",
+			"MantineUI",
+			"Shadcn",
+			"HTML",
+			"CSS",
 		],
 	},
 	{
@@ -21,15 +23,17 @@ const technologies = [
 			"Django",
 			"PostgreSQL",
 			"MongoDB",
+			"MySQL",
+			"PHP",
 		],
 	},
 	{
 		category: "DevOps",
-		skills: ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
+		skills: ["Docker", "Git", "Linux", "Nginx"],
 	},
 	{
 		category: "Tools",
-		skills: ["VS Code", "Postman", "Figma", "Jest", "GitHub", "Vercel"],
+		skills: ["VS Code", "Figma", "Jest", "GitHub", "Vercel"],
 	},
 ];
 
