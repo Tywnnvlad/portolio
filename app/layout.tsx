@@ -21,7 +21,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<Analytics />
 			<body
 				className={cn(
 					"min-h-screen font-sans antialiased bg-black text-white",
@@ -33,6 +32,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					{children}
+					<Analytics />
 				</ThemeProvider>
 			</body>
 		</html>
