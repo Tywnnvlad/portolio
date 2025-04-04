@@ -5,6 +5,7 @@ import ContactForm from "./components/contact-form";
 import ProjectCard from "./components/project-card";
 import SpaceBackground from "./components/space-background";
 import TechStack from "./components/tech-stack";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Page() {
 	return (
