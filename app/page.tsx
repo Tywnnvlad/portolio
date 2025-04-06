@@ -56,7 +56,7 @@ export default function Page() {
 									gcal.dev
 								</h1>
 
-								<p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
+								<p className="mx-auto max-w-[700px] text-gray-300 md:text-xl drop-shadow-2xl">
 									Welcome to my corner of the internet! I am,
 									a software developer who enjoys the
 									challenge of building innovative software.
@@ -79,7 +79,7 @@ export default function Page() {
 									</Button>
 								</Link>
 								<Link
-									href="https://www.linkedin.com/in/gregorycal1994/"
+									href="https://www.linkedin.com/in/gcaldev//"
 									target="_blank">
 									<Button
 										variant="outline"
@@ -138,21 +138,21 @@ export default function Page() {
 							<ProjectCard
 								title="Raytracing engine"
 								description="This project is a basic raytracing engine implemented in Java. It demonstrates fundamental raytracing concepts."
-								image="/placeholder.svg?height=400&width=600"
+								// image="/placeholder.svg?height=400&width=600"
 								link="https://github.com/Tywnnvlad/Raytracing-engine"
 								tags={["Java"]}
 							/>
 							<ProjectCard
 								title="File integrity checker"
 								description="A Python script to monitor file integrity within a directory by comparing SHA256 hashes against a stored baseline."
-								image="/placeholder.svg?height=400&width=600"
+								// image="/placeholder.svg?height=400&width=600"
 								link="https://github.com/Tywnnvlad/File-Inegrity-Cheker"
 								tags={["Python"]}
 							/>
 							<ProjectCard
 								title="Fullstack Websites"
 								description="Various websites that different technologies for the needs of clients "
-								image="/placeholder.svg?height=400&width=600"
+								// image="/placeholder.svg?height=400&width=600"
 								link="https://github.com/Tywnnvlad/"
 								tags={[
 									"React",
@@ -176,7 +176,7 @@ export default function Page() {
 					</div>
 				</section>
 
-				<section id="contact" className="py-12 md:py-24 lg:py-32">
+				{/* <section id="contact" className="py-12 md:py-24 lg:py-32">
 					<div className="container mx-auto px-4 md:px-6">
 						<div className="mx-auto max-w-2xl">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center text-white">
@@ -185,7 +185,7 @@ export default function Page() {
 							<ContactForm />
 						</div>
 					</div>
-				</section>
+				</section> */}
 			</main>
 
 			<footer className="border-t border-gray-800 relative z-10">

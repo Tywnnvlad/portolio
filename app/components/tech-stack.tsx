@@ -29,7 +29,7 @@ const technologies = [
 	},
 	{
 		category: "DevOps",
-		skills: ["Docker", "Git", "Linux", "Nginx"],
+		skills: ["Docker", "Git", "Linux", "Nginx", "AWS"],
 	},
 	{
 		category: "Tools",

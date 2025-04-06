@@ -6,7 +6,7 @@ import Link from "next/link";
 interface ProjectCardProps {
 	title: string;
 	description: string;
-	image: string;
+	// image: string;
 	link: string;
 	tags: string[];
 }
@@ -14,20 +14,20 @@ interface ProjectCardProps {
 export default function ProjectCard({
 	title,
 	description,
-	image,
+	// image,
 	link,
 	tags,
 }: ProjectCardProps) {
 	return (
 		<Card className="overflow-hidden bg-black/50 border-gray-800 text-white backdrop-blur-sm flex flex-col">
-			<div className="relative aspect-video">
+			{/* <div className="relative aspect-video">
 				<Image
 					src={image || "/placeholder.svg"}
 					alt={title}
 					fill
 					className="object-cover transition-transform hover:scale-105"
 				/>
-			</div>
+			</div> */}
 			<CardContent className="p-4 flex-grow">
 				<h3 className="font-semibold text-xl mb-2">{title}</h3>
 				<p className="text-sm text-gray-300 mb-4">{description}</p>
