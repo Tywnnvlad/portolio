@@ -17,11 +17,13 @@ const technologies = [
 	{
 		category: "Backend",
 		skills: [
-			"Node.js",
+			"Prisma",
+			"Java",
 			"Express",
 			"Python",
 			"Django",
 			"PostgreSQL",
+			"Node",
 			"MongoDB",
 			"MySQL",
 			"PHP",
