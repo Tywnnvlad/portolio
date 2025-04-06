@@ -1,12 +1,55 @@
+"use client"; // Add this directive for useState and useEffect
+
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import ContactForm from "./components/contact-form";
+import { useState, useEffect, useRef } from "react"; // Import hooks
+// import ContactForm from "./components/contact-form"; // Removed unused import
 import ProjectCard from "./components/project-card";
 import SpaceBackground from "./components/space-background";
 import TechStack from "./components/tech-stack";
-
+import { trackResumeInteraction } from "./actions"; // Import server action
 export default function Page() {
+	const [showResumeOptions, setShowResumeOptions] = useState(false);
+	const resumeButtonRef = useRef<HTMLDivElement>(null);
+
+	// Close dropdown when clicking outside
+	useEffect(() => {
+		function handleClickOutside(event: MouseEvent) {
+			if (
+				resumeButtonRef.current &&
+				!resumeButtonRef.current.contains(event.target as Node)
+			) {
+				setShowResumeOptions(false);
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [resumeButtonRef]);
+
+	const handleDownloadResume = async () => {
+		setShowResumeOptions(false); // Close dropdown
+		try {
+			await trackResumeInteraction("download");
+			const link = document.createElement("a");
+			link.href = "/resume.pdf";
+			// Suggest a filename for the download
+			link.download = "GregoryCal_Resume.pdf";
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} catch (error) {
+			console.error("Failed to track or download resume:", error);
+			// Optionally: Show an error message to the user
+		}
+	};
+
+	const handleViewResume = async () => {
+		setShowResumeOptions(false); // Close dropdown
+		// Navigation is handled by the Link component, tracking will happen on the /resume page
+	};
 	return (
 		<div className="min-h-screen flex flex-col">
 			<SpaceBackground />
@@ -37,18 +80,40 @@ export default function Page() {
 							</Link>
 						</nav>
 					</div>
-					<Button
-						// variant="outline"
-						className="border-gray-700 bg-white text-gray-800 hover:bg-blue-500 hover:text-white">
-						Resume
-					</Button>
+					{/* Resume Button with Dropdown */}
+					<div className="relative" ref={resumeButtonRef}>
+						<Button
+							onClick={() =>
+								setShowResumeOptions(!showResumeOptions)
+							}
+							className="border-gray-700 bg-white text-gray-800 hover:bg-blue-500 hover:text-white">
+							Resume
+						</Button>
+						{showResumeOptions && (
+							<div className="absolute right-0 mt-2 w-48 bg-gray-900 border border-gray-700 rounded-md shadow-lg z-50 text-white">
+								<div className="py-1">
+									<button
+										onClick={handleDownloadResume}
+										className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
+										Download PDF
+									</button>
+									<Link
+										href="/resume"
+										onClick={handleViewResume}
+										className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-700">
+										View Online
+									</Link>
+								</div>
+							</div>
+						)}
+					</div>
 				</div>
 			</header>
 
 			<main className="flex-1 flex flex-col relative z-10">
 				<section
 					id="about"
-					className="py-12 md:py-24 lg:py-32 flex items-center justify-center">
+					className="pt-50 md:pt-30 lg:pt-40 flex items-center justify-center p-">
 					<div className="container mx-auto px-4 md:px-6">
 						<div className="flex flex-col items-center justify-center space-y-6 text-center">
 							<div className="space-y-3 max-w-3xl">
@@ -125,7 +190,8 @@ export default function Page() {
 							<ProjectCard
 								title="Chess"
 								description="A java-based chess game, using a Swing GUI. The game is made for players of various chess-ability, having features including: move highlights, move hints, move undo/redo, a piece information query button, AI player functionality, PGN loading and saving functionality, and more."
-								image="/placeholder.svg?height=400&width=600"
+								// image="/placeholder.svg?height=400&width=600" // Removed image prop
+								// image="/placeholder.svg?height=400&width=600" // Removed image prop
 								link="https://github.com/Tywnnvlad/chess"
 								tags={[
 									"Java",

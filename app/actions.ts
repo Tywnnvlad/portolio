@@ -15,3 +15,16 @@ export async function submitContactForm(formData: FormData) {
 		message: "Thanks for your message! I'll get back to you soon.",
 	};
 }
+export async function trackResumeInteraction(type: "download" | "view") {
+	// Log the interaction
+	console.log(`Resume ${type} recorded at ${new Date().toISOString()}`);
+
+	// In a real implementation, you might:
+	// - Save to a database (e.g., using Prisma, Drizzle, etc.)
+	// - Send data to an analytics service (e.g., Google Analytics, Plausible)
+
+	// Simulate potential async operation
+	await new Promise((resolve) => setTimeout(resolve, 50)); // Small delay
+
+	return { success: true, type, timestamp: new Date().toISOString() };
+}
